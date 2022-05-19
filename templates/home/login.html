@@ -1,0 +1,44 @@
+{% load static %}
+
+{% include 'home/header.html' %}
+
+<section class="login_part padding_top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3>Welcome Back ! <br>
+                            Please Sign in now</h3>
+
+                        <form class="row contact_form" action="login" method="post">
+                            {% csrf_token %}
+                            {% if error_msg %}
+
+                                <div class="col-md-12 form-group p_star alert-info" role="alert" style="color: red">
+                                            {{ error_msg }}
+                                </div>
+
+                            {% endif %}
+                            <div class="col-md-12 form-group p_star">
+                                <input type="text" class="form-control" name="email" value=""
+                                       placeholder="Enter your email" required/>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input type="password" class="form-control" name="password" value=""
+                                       placeholder="Enter Password" required/>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <button type="submit" value="login" class="btn_3">
+                                    log in
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'home/footer.html' %}

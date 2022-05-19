@@ -1,0 +1,38 @@
+{% load static %}
+
+{% include 'home/header.html' %}
+
+<section class="feature_part padding_top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section_tittle text-center">
+                    <h2>
+                         Products</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+
+            {% for i in p %}
+            <div class="col-lg-6 col-sm-6">
+                <div class="single_feature_post_text" >
+                    <p>{{ i.p_desc }}</p><br><br><br><br><br>
+                    <h2>{{ i.p_name }}</h2><br><br><br>
+                     <h4>₹{{ i.p_price }}</h4>
+                  <div> <img style="
+    width: 260px;
+    height: 283px;
+"src="{{ i.p_image }}" alt=""></div>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+{% include 'home/footer.html' %}
